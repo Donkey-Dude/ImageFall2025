@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <title>Textures - A-Frame School</title>
+    <meta name="description" content="Textures - A-Frame School">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
+      <!-- Preload assets to ensure textures are available -->
       <a-assets>
-        <img id="sky1" src="ImageLab10/AdobeStock_591529044 (1).jpg">
-
+        <img id="sky1" src="assets/sky2.jpg">
+        <img id="tex1" src="assets/texture10.jpeg">
+        <img id="tex2" src="assets/texture20.jpeg">
+        <img id="tex4" src="assets/texture40.jpeg">
+        <img id="plane" src="assets/plane2.jpeg">
       </a-assets>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
       <a-sky src="#sky1" radius="30"></a-sky>
+      
+      <a-box src="#tex1" position="-2 0.5 -4"></a-box>
+      <a-sphere src="#tex2" radius="0.5" position="0 0.5 -3"></a-sphere>
+      <a-box src="#tex4" position="2 0.5 -4"></a-box>
+
+      <a-plane src="#plane" rotation="-90 0 0" height="100" width="100"></a-plane>
+
+      <a-light type="ambient" color="#666"></a-light>
+      <a-light type="point" intensity="1" position="2 4 4"></a-light>
     </a-scene>
   </body>
 </html>
